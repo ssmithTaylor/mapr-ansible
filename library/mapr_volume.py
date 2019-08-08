@@ -313,7 +313,7 @@ def execute_volume_changes(volume_exists, old_values, new_values, schedule_id, m
         volume_command += " -minreplication " + str(new_values['min_replication'])
         volume_command += " -replication " + str(new_values['replication'])
         volume_command += " -advisoryquota " + str(new_values['soft_quota_in_mb'])
-        volume_command += " -quota " + str(new_values['soft_quota_in_mb'])
+        volume_command += " -quota " + str(new_values['hard_quota_in_mb'])
         volume_command += " -readonly " + ("1" if new_values['read_only'] else "0")
         volume_command += " -aetype " + ("0" if new_values['accountable_entity_type'] == "user" else "1")
         volume_command += " -ae " + new_values['accountable_entity_name']
